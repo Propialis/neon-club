@@ -380,6 +380,9 @@ export default (e) => {
       neonClubEmissiveMaterial.uniforms.uMood.value = new THREE.Vector3(
         ...moodChangerColor
       );
+      sphere.uniforms.uMood.value = new THREE.Vector3(
+        ...moodChangerColor
+      );
       if (beatFactor1) {
         // cloudMaterial1.color = new THREE.Color(
         //   (moodChangerColor[0] + beatFactor1 / 30) / 5,
