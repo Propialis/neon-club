@@ -441,7 +441,7 @@ export default (e) => {
       });
     }
     if (reactWoofer){
-      sphere.material.uniforms.uBeat.value = reactWoofer;
+      sphere.material.uniforms.uBeat.value = reactWoofer * 2;
       console.log(reactWoofer, sphere.material.uniforms.uPulse2.value);
     }
 
