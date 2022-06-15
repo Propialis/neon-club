@@ -228,7 +228,7 @@ export default (e) => {
         uTime: { value: 0 },
         uPulse: { value: 0 },
         uPulse2: { value: -2 },
-        uBeat: { value: 0.5 },
+        uBeat: { value: 0 },
         uMood: { value: new THREE.Vector3(0.1, 0.2, 0.6) },
         uResolution: {
           value: new THREE.Vector2(window.innerWidth, window.innerHeight),
