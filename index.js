@@ -433,7 +433,8 @@ export default (e) => {
             o.morphTargetInfluences[0] = reactWoofer;
             o.morphTargetInfluences[1] = reactMid;
             sphere.material.uniforms.uPulse.value = reactWoofer;
-            sphere.material.uniforms.uPulse2.value = reactMid;
+            console.log(reactWoofer, sphere.material.uniforms.uPulse.value);
+            // sphere.material.uniforms.uPulse2.value = reactMid;
           }
         })
       });
