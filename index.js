@@ -416,25 +416,26 @@ export default (e) => {
     // shaking the scene with beat
     // earthquakePass.factor = beatFactor1 / 4
 
-      // deforming speakers to the music
-      if (beatSpeakerHi){
-        reactMid = beatSpeakerHi;
-        // console.log(reactWoofer);
-      };
-      if (beatSpeakerBass){
-        reactWoofer = beatSpeakerBass;
-        // console.log(reactMid);
-      };
-      //console.log(speaker.scene.isMesh());
-      if (speakers){
-        speakers.forEach(speaker => {
-          speaker.scene.traverse(o => {
-            if (o.isMesh) {
-              o.morphTargetInfluences[0] = reactWoofer;
-              o.morphTargetInfluences[1] = reactMid;
-            }
-          })
-        });
+    // deforming speakers to the music
+    if (beatSpeakerHi){
+      reactMid = beatSpeakerHi;
+      // console.log(reactWoofer);
+    };
+    if (beatSpeakerBass){
+      reactWoofer = beatSpeakerBass;
+      // console.log(reactMid);
+    };
+    //console.log(speaker.scene.isMesh());
+    if (speakers){
+      speakers.forEach(speaker => {
+        speaker.scene.traverse(o => {
+          if (o.isMesh) {
+            o.morphTargetInfluences[0] = reactWoofer;
+            o.morphTargetInfluences[1] = reactMid;
+          }
+        })
+      });
+    }
 
 
 
@@ -480,6 +481,9 @@ export default (e) => {
     // console.log(beatFactor3)
     // renderBloom(true)
   });
+
+
+
   useCleanup(() => {
     // composer.removePass(finalPass)
     // composer.removePass(earthquakePass)
