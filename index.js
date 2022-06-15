@@ -335,6 +335,7 @@ export default (e) => {
   document.body.onkeyup = (e) => {
     if (e.code === 'Space') {
       const audio = getAudio({ createOnCall: false });
+      console.log("space pressed");
       if (audio.paused !== undefined) {
         if (audio.paused) {
           audio.play();
