@@ -238,7 +238,7 @@ export default (e) => {
       },
     })
   );
-  sphere.position.set(-94, 14, -3);
+  sphere.position.set(-94, 14, 1);
   sphere.rotation.y = Math.PI;
   sphere.updateMatrixWorld();
 
@@ -381,7 +381,7 @@ export default (e) => {
         ...moodChangerColor
       );
       sphere.material.uniforms.uMood.value = new THREE.Vector3(
-        moodChangerColor[0]* -0.8,moodChangerColor[1]* -0.8, moodChangerColor[2]* -0.8
+        moodChangerColor[0]* 0.7,moodChangerColor[1]* 0.7, moodChangerColor[2]* 0.7
       );
       if (beatFactor1) {
         // cloudMaterial1.color = new THREE.Color(
