@@ -432,6 +432,8 @@ export default (e) => {
           if (o.isMesh) {
             o.morphTargetInfluences[0] = reactWoofer;
             o.morphTargetInfluences[1] = reactMid;
+            sphere.material.uniforms.uPulse.value = reactWoofer;
+            sphere.material.uniforms.uPulse2.value = reactMid;
           }
         })
       });
