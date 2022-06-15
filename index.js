@@ -228,7 +228,7 @@ export default (e) => {
         uTime: { value: 0 },
         uPulse: { value: -2 },
         uPulse2: { value: -2 },
-        uBeat: { value: -1 },
+        uBeat: { value: 0.5 },
         uMood: { value: new THREE.Vector3(0.1, 0.2, 0.6) },
         uResolution: {
           value: new THREE.Vector2(window.innerWidth, window.innerHeight),
@@ -238,7 +238,7 @@ export default (e) => {
       },
     })
   );
-  sphere.position.set(-94, 14, -1);
+  sphere.position.set(-94, 14, -3);
   sphere.rotation.y = Math.PI;
   sphere.updateMatrixWorld();
 
@@ -381,7 +381,7 @@ export default (e) => {
         ...moodChangerColor
       );
       sphere.material.uniforms.uMood.value = new THREE.Vector3(
-        moodChangerColor[0]* 0.8,moodChangerColor[1]* 0.8, moodChangerColor[2]* 0.8
+        moodChangerColor[0]* -0.8,moodChangerColor[1]* -0.8, moodChangerColor[2]* -0.8
       );
       if (beatFactor1) {
         // cloudMaterial1.color = new THREE.Color(
