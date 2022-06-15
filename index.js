@@ -227,7 +227,7 @@ export default (e) => {
       uniforms: {
         uTime: { value: 0 },
         uPulse: { value: -2 },
-        uPulse2: { value: 4 },
+        uPulse2: { value: -4 },
         uBeat: { value: -2 },
         uMood: { value: new THREE.Vector3(0.1, 0.2, 0.6) },
         uResolution: {
@@ -370,7 +370,7 @@ export default (e) => {
 
       const moodChanger = (threshold + 1) / 256;
       const moodChangerColor = [
-        moodChanger + 0.1 + (beatFactor3 ? beatFactor3 / 50 : 0),
+        moodChanger + 0.1 + (beatFactor3 ? beatFactor3 / 70 : 0),
         0.3 + moodChanger / 10 + (beatFactor2 ? beatFactor2 / 40 : 0),
         Math.abs(0.8 - moodChanger) + (beatFactor1 ? beatFactor1 / 30 : 0),
       ];
@@ -383,7 +383,6 @@ export default (e) => {
       sphere.material.uniforms.uMood.value = new THREE.Vector3(
         ...moodChangerColor
       );
-      console.log(moodChangerColor);
       if (beatFactor1) {
         // cloudMaterial1.color = new THREE.Color(
         //   (moodChangerColor[0] + beatFactor1 / 30) / 5,
