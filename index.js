@@ -347,25 +347,25 @@ export default (e) => {
         sphere.material.uniforms.uBeat.value = beatFactor3;
       }
       if (beatFactor2) {
-        cloudMaterial2.color = new THREE.Color(
-          (moodChangerColor[1] + beatFactor2 / 22) / 5,
-          (moodChangerColor[0] + beatFactor2 / 30) / 5,
-          (moodChangerColor[2] + beatFactor2 / 30) / 5
-        );
+        // cloudMaterial2.color = new THREE.Color(
+        //   (moodChangerColor[1] + beatFactor2 / 22) / 5,
+        //   (moodChangerColor[0] + beatFactor2 / 30) / 5,
+        //   (moodChangerColor[2] + beatFactor2 / 30) / 5
+        // );
       }
       if (beatFactor3) {
-        cloudMaterial3.color = new THREE.Color(
-          (moodChangerColor[0] - beatFactor3 / 30) / 5,
-          (moodChangerColor[1] + beatFactor3 / 25) / 5,
-          (moodChangerColor[2] + beatFactor3 / 30) / 5
-        );
+        // cloudMaterial3.color = new THREE.Color(
+        //   (moodChangerColor[0] - beatFactor3 / 30) / 5,
+        //   (moodChangerColor[1] + beatFactor3 / 25) / 5,
+        //   (moodChangerColor[2] + beatFactor3 / 30) / 5
+        // );
       }
       if (beatFactor4) {
-        cloudMaterial4.color = new THREE.Color(
-          (moodChangerColor[0] - beatFactor4 / 30) / 5,
-          (moodChangerColor[1] + beatFactor4 / 24) / 5,
-          (moodChangerColor[2] + beatFactor4 / 32) / 5
-        );
+        // cloudMaterial4.color = new THREE.Color(
+        //   (moodChangerColor[0] - beatFactor4 / 30) / 5,
+        //   (moodChangerColor[1] + beatFactor4 / 24) / 5,
+        //   (moodChangerColor[2] + beatFactor4 / 32) / 5
+        // );
       }
     }
     // shaking the scene with beat
