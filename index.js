@@ -450,8 +450,8 @@ export default (e) => {
       verticalRangeEnd: 170,
     });
     beatSpeakerBass = getFrequenciesByRange({
-      horizontalRangeStart: 30,
-      horizontalRangeEnd: 50,
+      horizontalRangeStart: 20,
+      horizontalRangeEnd: 40,
       verticalRangeStart: 60,
       verticalRangeEnd: 140,
     });
