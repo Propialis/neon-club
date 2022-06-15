@@ -381,7 +381,7 @@ export default (e) => {
         ...moodChangerColor
       );
       sphere.material.uniforms.uMood.value = new THREE.Vector3(
-        ...moodChangerColor
+        ...moodChangerColor*0.8
       );
       if (beatFactor1) {
         // cloudMaterial1.color = new THREE.Color(
