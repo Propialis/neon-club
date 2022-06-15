@@ -226,9 +226,9 @@ export default (e) => {
       // side: THREE.BackSide,
       uniforms: {
         uTime: { value: 0 },
-        uPulse: { value: 0 },
-        uPulse2: { value: -2 },
-        uBeat: { value: 0 },
+        uPulse: { value: -2 },
+        uPulse2: { value: 4 },
+        uBeat: { value: -2 },
         uMood: { value: new THREE.Vector3(0.1, 0.2, 0.6) },
         uResolution: {
           value: new THREE.Vector2(window.innerWidth, window.innerHeight),
@@ -383,6 +383,7 @@ export default (e) => {
       sphere.material.uniforms.uMood.value = new THREE.Vector3(
         ...moodChangerColor
       );
+      console.log(moodChangerColor);
       if (beatFactor1) {
         // cloudMaterial1.color = new THREE.Color(
         //   (moodChangerColor[0] + beatFactor1 / 30) / 5,
@@ -392,7 +393,7 @@ export default (e) => {
         neonClubEmissiveMaterial.uniforms.uBeat.value = beatFactor1;
         neonClubCyberLinesMaterial.uniforms.uBeat1.value = beatFactor1;
         neonClubCyberLinesMaterial.uniforms.uBeat2.value = beatFactor3;
-        sphere.material.uniforms.uBeat.value = beatFactor3;
+        // sphere.material.uniforms.uBeat.value = beatFactor3;
       }
       if (beatFactor2) {
         // cloudMaterial2.color = new THREE.Color(
