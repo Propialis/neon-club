@@ -228,7 +228,7 @@ export default (e) => {
         uTime: { value: 0 },
         uPulse: { value: -2 },
         uPulse2: { value: -2 },
-        uBeat: { value: 0.5 },
+        uBeat: { value: -1 },
         uMood: { value: new THREE.Vector3(0.1, 0.2, 0.6) },
         uResolution: {
           value: new THREE.Vector2(window.innerWidth, window.innerHeight),
@@ -238,7 +238,7 @@ export default (e) => {
       },
     })
   );
-  sphere.position.set(-94, 14, 0);
+  sphere.position.set(-94, 14, -1);
   sphere.rotation.y = Math.PI;
   sphere.updateMatrixWorld();
 
@@ -441,12 +441,12 @@ export default (e) => {
       });
     }
     if (reactWoofer){
-      if (reactWoofer === 1){
-        sphere.material.uniforms.uBeat.value = 3;
-      }else{
+      // if (reactWoofer === 1){
+      //   sphere.material.uniforms.uBeat.value = 3;
+      // }else{
       sphere.material.uniforms.uBeat.value = reactWoofer;
       console.log(reactWoofer, sphere.material.uniforms.uPulse2.value);
-      }
+      
     }
 
 
