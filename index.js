@@ -336,11 +336,11 @@ export default (e) => {
         ...moodChangerColor
       );
       if (beatFactor1) {
-        cloudMaterial1.color = new THREE.Color(
-          (moodChangerColor[0] + beatFactor1 / 30) / 5,
-          (moodChangerColor[1] + beatFactor1 / 22) / 5,
-          (moodChangerColor[2] + beatFactor1 / 30) / 5
-        );
+        // cloudMaterial1.color = new THREE.Color(
+        //   (moodChangerColor[0] + beatFactor1 / 30) / 5,
+        //   (moodChangerColor[1] + beatFactor1 / 22) / 5,
+        //   (moodChangerColor[2] + beatFactor1 / 30) / 5
+        // );
         neonClubEmissiveMaterial.uniforms.uBeat.value = beatFactor1;
         neonClubCyberLinesMaterial.uniforms.uBeat1.value = beatFactor1;
         neonClubCyberLinesMaterial.uniforms.uBeat2.value = beatFactor3;
