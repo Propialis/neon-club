@@ -228,7 +228,7 @@ export default (e) => {
         uTime: { value: 0 },
         uPulse: { value: -2 },
         uPulse2: { value: -2 },
-        uBeat: { value: -2 },
+        uBeat: { value: 0.5 },
         uMood: { value: new THREE.Vector3(0.1, 0.2, 0.6) },
         uResolution: {
           value: new THREE.Vector2(window.innerWidth, window.innerHeight),
@@ -238,7 +238,7 @@ export default (e) => {
       },
     })
   );
-  sphere.position.set(-94, 12, 0);
+  sphere.position.set(-94, 14, 0);
   sphere.rotation.y = Math.PI;
   sphere.updateMatrixWorld();
 
@@ -441,7 +441,7 @@ export default (e) => {
       });
     }
     if (reactWoofer){
-      sphere.material.uniforms.uBeat.value = reactWoofer;
+      sphere.material.uniforms.uBeat.value = reactWoofer * 3;
       console.log(reactWoofer, sphere.material.uniforms.uPulse2.value);
     }
 
@@ -455,10 +455,10 @@ export default (e) => {
       verticalRangeEnd: 170,
     });
     beatSpeakerBass = getFrequenciesByRange({
-      horizontalRangeStart: 20,
-      horizontalRangeEnd: 40,
-      verticalRangeStart: 30,
-      verticalRangeEnd: 170,
+      horizontalRangeStart: 0,
+      horizontalRangeEnd: 35,
+      verticalRangeStart: 60,
+      verticalRangeEnd: 200,
     });
     // various other beat factor ranges
     beatFactor1 = getFrequenciesByRange({
