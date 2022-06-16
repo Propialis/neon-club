@@ -166,7 +166,8 @@ export default (e) => {
               // gltf.scene.quaternion.copy(params.logoQuat);
             }           
              if (child.name === 'Capital') {
-              capitalText = child.scene;
+              capitalText = child;
+              capitalText.material.color = new THREE.Color(1,0,0)
               console.log(capitalText);
               // gltf.scene.quaternion.copy(params.logoQuat);
             }
@@ -233,9 +234,8 @@ export default (e) => {
   const vizSpeaker1 = loadModel(speaker1Info);
   Promise.all([vizSpeaker1]).then((values) => {
     values.forEach((model) => {
-      console.log("loaded speaker", model);
+      // console.log("loaded speaker", model);
       app.add(model)
-      console.log(model);
     })
   })
   // const speakerInfo2 = {
@@ -441,6 +441,7 @@ export default (e) => {
       sphere.material.uniforms.uMood.value = new THREE.Vector3(
         moodChangerColor[0],moodChangerColor[1], moodChangerColor[2]
       );
+      // capitalText.material.color = new THREE.Color(...moodChangerColor);
       if (beatFactor1) {
         // cloudMaterial1.color = new THREE.Color(
         //   (moodChangerColor[0] + beatFactor1 / 30) / 5,
