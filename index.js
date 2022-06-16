@@ -129,8 +129,8 @@ export default (e) => {
             if (
               child.material.name === 'Wall' ||
               child.material.name === 'Wall.001' ||
-              child.material.name === 'Wall2' 
-              // child.material.name
+              child.material.name === 'Wall2' ||
+              child.material.name === "Material.012"
             ) {
               const emissiveMap = new THREE.TextureLoader().load(
                 baseUrl + 'textures/wall_Emissive.png'
@@ -443,10 +443,12 @@ export default (e) => {
       sphere.material.uniforms.uMood.value = new THREE.Vector3(
         moodChangerColor[0],moodChangerColor[1], moodChangerColor[2]
       );
+      if(eGirlFrame){
       // if(moodChangerColor[0] > 0.6 && moodChangerColor[0]> 0.6){
       const moodColor = new THREE.Color(...moodChangerColor)
       eGirlFrame.material.emissive.set(moodColor);
       // }
+      }
       if (beatFactor1) {
         // cloudMaterial1.color = new THREE.Color(
         //   (moodChangerColor[0] + beatFactor1 / 30) / 5,
