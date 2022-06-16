@@ -166,8 +166,12 @@ export default (e) => {
               gltf.scene.scale.set(13.5,13.5,13.5);
               gltf.scene.position.copy(params.logoPos);
               gltf.scene.rotation.set(0, 1.57,0);
+              eGirlText = child;
               // gltf.scene.quaternion.copy(params.logoQuat);
-            }           
+            }
+            if (child.name === 'Capital') {
+              capitalText = child;
+            }      
              if (child.name === 'Frame') {
               eGirlFrame = child;
               // let red = new THREE.Color(1,0,0);
@@ -449,6 +453,8 @@ export default (e) => {
       // if(moodChangerColor[0] > 0.6 && moodChangerColor[0]> 0.6){
       const moodColor = new THREE.Color(...moodChangerColor)
       eGirlFrame.material.emissive.set(moodColor);
+      capitalText.material.emissive.set(moodColor);
+      eGirlText.material.emissive.set(moodColor);
       // }
       }
       if (beatFactor1) {
