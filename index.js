@@ -214,7 +214,7 @@ export default (e) => {
       app.add(model);
     });
   });
-  eGirlLogo.position.set(83,5,43);
+  // eGirlLogo.position.set(83,5,43);
 
 
 
