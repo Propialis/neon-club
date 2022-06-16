@@ -126,7 +126,7 @@ export default (e) => {
           if (child.isMesh) {
             child.material.side = THREE.DoubleSide;
             // checking if the child is a wall
-            if (
+              if (
               child.material.name === "Material.012"
             ) {
               const emissiveMap = new THREE.TextureLoader().load(
@@ -172,6 +172,7 @@ export default (e) => {
               emissiveMap.flipY = false;
               beatMap1.flipY = false;
               beatMap2.flipY = false;
+              neonClubCyberLinesMaterial.uniforms.uTexture.value = emissiveMap;
               neonClubCyberLinesMaterial.uniforms.uBeatMap1.value = beatMap1;
               neonClubCyberLinesMaterial.uniforms.uBeatMap2.value = beatMap2;
               child.material = neonClubCyberLinesMaterial;
