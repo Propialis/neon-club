@@ -221,7 +221,7 @@ export default (e) => {
   const eGirlLogoInfo = {
     fileName: 'egirl_logo_SK.glb',
     filePath: baseUrl + 'models/',
-    logoPos: new THREE.Vector3(-120.3, 45, -2.5),
+    logoPos: new THREE.Vector3(-94, 30, 1),
     // logoQuat: new THREE.Vector4(0,1,0,0.4),
   };
   const eGirlLogo = loadModel(eGirlLogoInfo);
