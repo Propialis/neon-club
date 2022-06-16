@@ -164,6 +164,11 @@ export default (e) => {
               gltf.scene.position.copy(params.logoPos);
               gltf.scene.rotation.set(0, 1.5,0);
               // gltf.scene.quaternion.copy(params.logoQuat);
+            }           
+             if (child.name === 'Capital') {
+              capitalText = child.scene;
+              console.log(capitalText);
+              // gltf.scene.quaternion.copy(params.logoQuat);
             }
             // methods for preparing speakers and their locations 
             if (child.name === 'Speaker_1'){
@@ -204,8 +209,8 @@ export default (e) => {
   const eGirlLogoInfo = {
     fileName: 'egirl_logo.glb',
     filePath: baseUrl + 'models/',
-    logoPos: new THREE.Vector3(-119, 45, 0),
-    logoQuat: new THREE.Vector4(0,1,0,0.4),
+    logoPos: new THREE.Vector3(-119, 45, -2),
+    // logoQuat: new THREE.Vector4(0,1,0,0.4),
   };
   const eGirlLogo = loadModel(eGirlLogoInfo);
 
