@@ -219,7 +219,7 @@ export default (e) => {
 
   Promise.all([eGirlLogo]).then((values) => {
     values.forEach((model) => {
-      console.log("loaded egirl", eGirlFrame.material.emissive);
+      console.log("loaded egirl", eGirlFrame);
       app.add(model);
     });
   });
