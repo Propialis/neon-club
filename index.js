@@ -145,7 +145,7 @@ export default (e) => {
               beatMap1.flipY = false;
               beatMap2.flipY = false;
               neonClubCyberLinesMaterial.uniforms.uTexture.value = emissiveMap;
-              neonClubCyberLinesMaterial.uniforms.uBeatMap2.value = beatMap2;
+              neonClubCyberLinesMaterial.uniforms.uBeatMap1.value = beatMap1;
               child.material = neonClubCyberLinesMaterial;
               // child.layers.toggle(BLOOM_SCENE)
             }
