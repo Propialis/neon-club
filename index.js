@@ -516,11 +516,15 @@ export default (e) => {
     //   });
     // }
     if (reactWoofer){
-      // if (reactWoofer === 1){
-      //   sphere.material.uniforms.uBeat.value = 3;
-      // }else{
+      const white = new THREE.Color(1,1,1);
+      const pink = new THREE.Color(1,0,1);
+      if (reactWoofer === 1){
+        egirlSign.material.emmissive.set(pink);
+      }else{
+        egirlSign.material.emmissive.set(white);
+      }
       
-      egirlSign.scale.set((13+2*reactWoofer,13+2*reactWoofer,13.5));
+      egirlSign.scale.set((15,20,15));
       console.log(egirlSign.scale);
       sphere.material.uniforms.uBeat.value = reactWoofer;
       // console.log(reactWoofer, sphere.material.uniforms.uPulse2.value);
