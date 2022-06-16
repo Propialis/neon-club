@@ -164,16 +164,16 @@ export default (e) => {
               // gltf.scene.position.copy(params.logoPos);
               // gltf.scene.quaternion.copy(params.logoQuat);
             // }
-            // // methods for preparing speakers and their locations 
-            // if (child.name === 'Speaker_1'){
-            //   let speaker1 = new THREE.Object3D();
-            //   gltf.scene.scale.set(4,4,4);
-            //   //works with hardcoded values
-            //   gltf.scene.position.copy(params.speakerPos);
-            //   gltf.scene.quaternion.copy(params.speakerQuat);
-            //   speaker1 = gltf;
-            //   speakers.push(speaker1);
-            // }
+            // methods for preparing speakers and their locations 
+            if (child.name === 'Speaker_1'){
+              let speaker1 = new THREE.Object3D();
+              gltf.scene.scale.set(4,4,4);
+              //works with hardcoded values
+              gltf.scene.position.copy(params.speakerPos);
+              gltf.scene.quaternion.copy(params.speakerQuat);
+              speaker1 = gltf;
+              speakers.push(speaker1);
+            }
           }
         });
         const physicsId = physics.addGeometry(gltf.scene);
@@ -210,7 +210,7 @@ export default (e) => {
 
   Promise.all([eGirlLogo]).then((values) => {
     values.forEach((model) => {
-      console.log("loaded speaker", model);
+      console.log("loaded egirl", model);
       app.add(model);
     });
   });
@@ -218,20 +218,20 @@ export default (e) => {
 
 
 
-  // const speaker1Info = {
-  //   fileName: 'react-Speaker.glb',
-  //   filePath: baseUrl + 'models/',
-  //   speakerPos: new THREE.Vector3(45,5,43),
-  //   speakerQuat: new THREE.Vector4(0,1,0,0),
-  // }
-  // const vizSpeaker1 = loadModel(speaker1Info);
-  // Promise.all([vizSpeaker1]).then((values) => {
-  //   values.forEach((model) => {
-  //     console.log("loaded speaker");
-  //     app.add(model)
-  //     console.log(model);
-  //   })
-  // })
+  const speaker1Info = {
+    fileName: 'react-Speaker.glb',
+    filePath: baseUrl + 'models/',
+    speakerPos: new THREE.Vector3(45,5,43),
+    speakerQuat: new THREE.Vector4(0,1,0,0),
+  }
+  const vizSpeaker1 = loadModel(speaker1Info);
+  Promise.all([vizSpeaker1]).then((values) => {
+    values.forEach((model) => {
+      console.log("loaded speaker", model);
+      app.add(model)
+      console.log(model);
+    })
+  })
   // const speakerInfo2 = {
   //   fileName: 'react-Speaker.glb',
   //   filePath: baseUrl + 'models/',
