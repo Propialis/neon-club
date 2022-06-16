@@ -169,7 +169,7 @@ export default (e) => {
               capitalText = child;
               let red = THREE.Color(1,0,0);
               console.log(capitalText.material.color);
-              capitalText.material.Color.set(red);
+              capitalText.material.color.set(red);
               console.log(capitalText.material.color);
               // gltf.scene.quaternion.copy(params.logoQuat);
             }
