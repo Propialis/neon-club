@@ -162,7 +162,7 @@ export default (e) => {
             if (child.name === 'EGirl') {
               gltf.scene.scale.set(12,12,12);
               gltf.scene.position.copy(params.logoPos);
-              gltf.scene.rotation.set(0, 0.5,0);
+              // gltf.scene.rotation.set(0, 0.5,0);
               // gltf.scene.quaternion.copy(params.logoQuat);
             }
             // methods for preparing speakers and their locations 
