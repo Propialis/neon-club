@@ -527,11 +527,12 @@ export default (e) => {
 
       const white = new THREE.Color(1,1,1);
       const pink = new THREE.Color(1,0,1);
-      if (reactWoofer === 1){
+      if (reactWoofer >= 0.95){
         eGirlText.material.emissive.set(white);
       }else{
         eGirlText.material.emissive.set(pink);
       }
+      console.log(beatFactor1, beatFactor2, beatFactor3, beatFactor4);
       // console.log(egirlSign.scale);
       sphere.material.uniforms.uBeat.value = reactWoofer;
       // console.log(reactWoofer, sphere.material.uniforms.uPulse2.value);
