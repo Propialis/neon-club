@@ -525,7 +525,7 @@ export default (e) => {
         eGirlText.material.emissive.set(pink);
       }
       
-      eGirlText.scale.set(...(1+reactWoofer))
+      eGirlText.scale.set(1+reactWoofer, 1+reactWoofer, 1);
       // console.log(egirlSign.scale);
       sphere.material.uniforms.uBeat.value = reactWoofer;
       // console.log(reactWoofer, sphere.material.uniforms.uPulse2.value);
