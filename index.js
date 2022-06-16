@@ -65,6 +65,7 @@ export default (e) => {
   // console.log(useInternals())
   let capitalText;
   let eGirlText;
+  let egirlSign;
   let backPlate;
   let eGirlFrame;
 
@@ -164,6 +165,7 @@ export default (e) => {
             }
             if (child.name === 'EGirl') {
               gltf.scene.scale.set(13.5,13.5,13.5);
+              egirlSign = gltf.scene;
               gltf.scene.position.copy(params.logoPos);
               gltf.scene.rotation.set(0, 1.57,0);
               eGirlText = child;
@@ -517,6 +519,8 @@ export default (e) => {
       // if (reactWoofer === 1){
       //   sphere.material.uniforms.uBeat.value = 3;
       // }else{
+      
+      egirlSign.scale.set((13+reactWoofer));
       sphere.material.uniforms.uBeat.value = reactWoofer;
       // console.log(reactWoofer, sphere.material.uniforms.uPulse2.value);
       
