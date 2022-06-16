@@ -208,7 +208,7 @@ export default (e) => {
   };
   const eGirlLogo = loadModel(eGirlLogoInfo);
 
-  Promise.all([neonClub]).then((values) => {
+  Promise.all([eGirlLogo]).then((values) => {
     values.forEach((model) => {
       console.log("loaded speaker", model);
       app.add(model);
