@@ -165,6 +165,8 @@ export default (e) => {
               gltf.scene.scale.set(13.5,13.5,13.5);
               gltf.scene.position.copy(params.logoPos);
               gltf.scene.rotation.set(0, 1.57,0);
+              child.material.emissive.set(1,0.2,1);
+              eGirlFrame = child;
               // gltf.scene.quaternion.copy(params.logoQuat);
             }           
              if (child.name === 'Frame') {
@@ -507,9 +509,15 @@ export default (e) => {
     //   });
     // }
     if (reactWoofer){
-      // if (reactWoofer === 1){
-      //   sphere.material.uniforms.uBeat.value = 3;
-      // }else{
+      if (reactWoofer === 1){
+        // sphere.material.uniforms.uBeat.value = 3;
+        eGirlFrame.material.emissive.set(1,0,1);
+      }
+      else{
+        
+        eGirlFrame.material.emissive.set(1,0.2,1);
+      }
+      // else{
       sphere.material.uniforms.uBeat.value = reactWoofer;
       // console.log(reactWoofer, sphere.material.uniforms.uPulse2.value);
       
