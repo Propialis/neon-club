@@ -129,8 +129,9 @@ export default (e) => {
             if (
               child.material.name === 'Wall' ||
               child.material.name === 'Wall.001' ||
-              child.material.name === 'Wall2' ||
-              child.material.name === "Material.012"
+              child.material.name === 'Wall2' 
+              // ||
+              // child.material.name === "Material.012"
             ) {
               const emissiveMap = new THREE.TextureLoader().load(
                 baseUrl + 'textures/wall_Emissive.png'
@@ -148,6 +149,29 @@ export default (e) => {
               beatMap1.flipY = false;
               beatMap2.flipY = false;
               neonClubCyberLinesMaterial.uniforms.uTexture.value = emissiveMap;
+              neonClubCyberLinesMaterial.uniforms.uBeatMap1.value = beatMap1;
+              neonClubCyberLinesMaterial.uniforms.uBeatMap2.value = beatMap2;
+              child.material = neonClubCyberLinesMaterial;
+              // child.layers.toggle(BLOOM_SCENE)
+            }
+            if (
+              child.material.name === "Material.012"
+            ) {
+              const emissiveMap = new THREE.TextureLoader().load(
+                baseUrl + 'textures/wall_Emissive.png'
+              );
+              const beatMap1 = new THREE.TextureLoader().load(
+                baseUrl + 'textures/wall_Emissive rgb1.png'
+              );
+              const beatMap2 = new THREE.TextureLoader().load(
+                baseUrl + 'textures/wall_Emissive rgb2.png'
+              );
+              emissiveMap.wrapS = emissiveMap.wrapT = THREE.RepeatWrapping;
+              beatMap1.wrapS = beatMap1.wrapT = THREE.RepeatWrapping;
+              beatMap2.wrapS = beatMap2.wrapT = THREE.RepeatWrapping;
+              emissiveMap.flipY = false;
+              beatMap1.flipY = false;
+              beatMap2.flipY = false;
               neonClubCyberLinesMaterial.uniforms.uBeatMap1.value = beatMap1;
               neonClubCyberLinesMaterial.uniforms.uBeatMap2.value = beatMap2;
               child.material = neonClubCyberLinesMaterial;
