@@ -160,8 +160,8 @@ export default (e) => {
               child.material = neonClubEmissiveMaterial;
             }
             if (child.name === 'Backplate') {
-              console.log("test");
-              gltf.scene.position.copy(params.logoPos);
+              // console.log("test");
+              // gltf.scene.position.copy(params.logoPos);
               // gltf.scene.quaternion.copy(params.logoQuat);
             }
             // // methods for preparing speakers and their locations 
@@ -214,6 +214,7 @@ export default (e) => {
       app.add(model);
     });
   });
+  eGirlLogo.position.set(83,5,43);
 
 
 
