@@ -521,6 +521,7 @@ export default (e) => {
       // }else{
       
       egirlSign.scale.set((13+reactWoofer));
+      console.log(egirlSign.scale);
       sphere.material.uniforms.uBeat.value = reactWoofer;
       // console.log(reactWoofer, sphere.material.uniforms.uPulse2.value);
       
