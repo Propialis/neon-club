@@ -129,7 +129,8 @@ export default (e) => {
             if (
               child.material.name === 'Wall' ||
               child.material.name === 'Wall.001' ||
-              child.material.name === 'Wall2'
+              child.material.name === 'Wall2' ||
+              // child.material.name
             ) {
               const emissiveMap = new THREE.TextureLoader().load(
                 baseUrl + 'textures/wall_Emissive.png'
@@ -168,7 +169,7 @@ export default (e) => {
              if (child.name === 'Frame') {
               eGirlFrame = child;
               // let red = new THREE.Color(1,0,0);
-              // console.log(capitalText.material.color);
+              console.log(gltf);
               // capitalText.material.emissive.set(red);
               // console.log(capitalText.material.emissive);
               // gltf.scene.quaternion.copy(params.logoQuat);
