@@ -167,8 +167,9 @@ export default (e) => {
             }           
              if (child.name === 'Capital') {
               capitalText = child;
+              let red = THREE.Color(1,0,0);
               console.log(capitalText.material.color);
-              capitalText.material.Color.setRGB(1,0,0);
+              capitalText.material.Color.set(red);
               console.log(capitalText.material.color);
               // gltf.scene.quaternion.copy(params.logoQuat);
             }
