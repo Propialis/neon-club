@@ -167,7 +167,7 @@ export default (e) => {
             }           
              if (child.name === 'Capital') {
               capitalText = child;
-              let red = THREE.Color(1,0,0);
+              let red = new THREE.Color(1,0,0);
               console.log(capitalText.material.color);
               capitalText.material.color.set(red);
               console.log(capitalText.material.color);
