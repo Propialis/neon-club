@@ -520,7 +520,7 @@ export default (e) => {
       //   sphere.material.uniforms.uBeat.value = 3;
       // }else{
       
-      egirlSign.scale.set((13+reactWoofer));
+      egirlSign.scale.set((13+2*reactWoofer,13+2*reactWoofer,13.5));
       console.log(egirlSign.scale);
       sphere.material.uniforms.uBeat.value = reactWoofer;
       // console.log(reactWoofer, sphere.material.uniforms.uPulse2.value);
