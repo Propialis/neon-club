@@ -162,7 +162,7 @@ export default (e) => {
               child.material = neonClubEmissiveMaterial;
             }
             if (child.name === 'EGirl') {
-              gltf.scene.scale.set(15,15,15);
+              gltf.scene.scale.set(13,13,13);
               gltf.scene.position.copy(params.logoPos);
               gltf.scene.rotation.set(0, 1.57,0);
               // gltf.scene.quaternion.copy(params.logoQuat);
