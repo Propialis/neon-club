@@ -160,9 +160,9 @@ export default (e) => {
               child.material = neonClubEmissiveMaterial;
             }
             if (child.name === 'EGirl') {
-              gltf.scene.scale.set(12,12,12);
+              gltf.scene.scale.set(16,16,16);
               gltf.scene.position.copy(params.logoPos);
-              // gltf.scene.rotation.set(0, 0.5,0);
+              gltf.scene.rotation.set(0, 0.75,0);
               // gltf.scene.quaternion.copy(params.logoQuat);
             }
             // methods for preparing speakers and their locations 
