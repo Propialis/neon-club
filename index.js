@@ -169,6 +169,7 @@ export default (e) => {
               gltf.scene.position.copy(params.logoPos);
               gltf.scene.rotation.set(0, 1.57,0);
               eGirlText = child;
+              console.log(eGirlText);
               // gltf.scene.quaternion.copy(params.logoQuat);
             }
             if (child.name === 'Capital') {
@@ -456,7 +457,7 @@ export default (e) => {
       const moodColor = new THREE.Color(...moodChangerColor)
       eGirlFrame.material.emissive.set(moodColor);
       capitalText.material.emissive.set(moodColor);
-      eGirlText.material.emissive.set(moodColor);
+      //eGirlText.material.emissive.set(moodColor);
       // }
       }
       if (beatFactor1) {
@@ -519,9 +520,9 @@ export default (e) => {
       const white = new THREE.Color(1,1,1);
       const pink = new THREE.Color(1,0,1);
       if (reactWoofer === 1){
-        egirlSign.material.emmissive.set(pink);
+        eGirlText.material.emmissive.set(white);
       }else{
-        egirlSign.material.emmissive.set(white);
+        eGirlText.material.emmissive.set(pink);
       }
       
       egirlSign.scale.set((15,20,15));
