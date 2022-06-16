@@ -219,7 +219,7 @@ export default (e) => {
   });
 
   const eGirlLogoInfo = {
-    fileName: 'egirl_logo.glb',
+    fileName: 'egirl_logo_SK.glb',
     filePath: baseUrl + 'models/',
     logoPos: new THREE.Vector3(-120.3, 45, -2.5),
     // logoQuat: new THREE.Vector4(0,1,0,0.4),
@@ -452,7 +452,14 @@ export default (e) => {
       sphere.material.uniforms.uMood.value = new THREE.Vector3(
         moodChangerColor[0],moodChangerColor[1], moodChangerColor[2]
       );
-      if(eGirlFrame){
+      if(egirlSign){
+      egirlSign.traverse(o =>{
+        if (o.isMesh){
+          if (o.morphTargetInfluences){
+            o.morphTargetInfluences[0] = reactWoofer;
+          }
+        }
+      })
       // if(moodChangerColor[0] > 0.6 && moodChangerColor[0]> 0.6){
       const moodColor = new THREE.Color(...moodChangerColor)
       eGirlFrame.material.emissive.set(moodColor);
@@ -517,6 +524,7 @@ export default (e) => {
     //   });
     // }
     if (reactWoofer){
+
       const white = new THREE.Color(1,1,1);
       const pink = new THREE.Color(1,0,1);
       if (reactMid === 1){
@@ -524,8 +532,6 @@ export default (e) => {
       }else{
         eGirlText.material.emissive.set(pink);
       }
-      
-      eGirlText.scale.set(1+reactWoofer, 1+reactWoofer, 1);
       // console.log(egirlSign.scale);
       sphere.material.uniforms.uBeat.value = reactWoofer;
       // console.log(reactWoofer, sphere.material.uniforms.uPulse2.value);
