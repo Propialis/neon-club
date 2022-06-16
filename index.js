@@ -57,9 +57,6 @@ let reactWoofer
 let reactMid
 
 // Egirl asset
-let eGirlText;
-let backPlate;
-let eGirlFrame;
 
 export default (e) => {
   const app = useApp();
@@ -67,6 +64,9 @@ export default (e) => {
   let speakers = [];
   // console.log(useInternals())
   let capitalText;
+  let eGirlText;
+  let backPlate;
+  let eGirlFrame;
 
   // const rootScene = useInternals().rootScene
   // const camera = useInternals().camera
@@ -165,8 +165,8 @@ export default (e) => {
               gltf.scene.rotation.set(0, 1.5,0);
               // gltf.scene.quaternion.copy(params.logoQuat);
             }           
-             if (child.name === 'Capital') {
-              capitalText = child;
+             if (child.name === 'Frame') {
+              eGirlFrame = child;
               // let red = new THREE.Color(1,0,0);
               // console.log(capitalText.material.color);
               // capitalText.material.emissive.set(red);
@@ -445,7 +445,7 @@ export default (e) => {
       );
       // if(moodChangerColor[0] > 0.6 && moodChangerColor[0]> 0.6){
       const moodColor = new THREE.Color(...moodChangerColor)
-      capitalText.material.emissive.set(moodColor);
+      eGirlFrame.material.emissive.set(moodColor);
       // }
       if (beatFactor1) {
         // cloudMaterial1.color = new THREE.Color(
