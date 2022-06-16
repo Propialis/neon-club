@@ -159,11 +159,11 @@ export default (e) => {
             if (child.material.name === 'emasive') {
               child.material = neonClubEmissiveMaterial;
             }
-            // if (child.name === 'Backplate') {
-              // console.log("test");
-              // gltf.scene.position.copy(params.logoPos);
-              // gltf.scene.quaternion.copy(params.logoQuat);
-            // }
+            if (child.name === 'EGirl') {
+              console.log("test");
+              gltf.scene.position.copy(params.logoPos);
+              gltf.scene.quaternion.copy(params.logoQuat);
+            }
             // methods for preparing speakers and their locations 
             if (child.name === 'Speaker_1'){
               let speaker1 = new THREE.Object3D();
