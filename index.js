@@ -138,7 +138,7 @@ export default (e) => {
               const beatMap2 = new THREE.TextureLoader().load(
                 baseUrl + 'textures/wall_Emissive rgb2.png'
               );
-              emissiveMap.wrapS = emissiveMap.wrapT = THREE.RepeatWrapping;
+              // emissiveMap.wrapS = emissiveMap.wrapT = THREE.RepeatWrapping;
               beatMap1.wrapS = beatMap1.wrapT = THREE.RepeatWrapping;
               beatMap2.wrapS = beatMap2.wrapT = THREE.RepeatWrapping;
               emissiveMap.flipY = false;
@@ -146,6 +146,7 @@ export default (e) => {
               beatMap2.flipY = false;
               neonClubCyberLinesMaterial.uniforms.uTexture.value = emissiveMap;
               neonClubCyberLinesMaterial.uniforms.uBeatMap1.value = beatMap1;
+              neonClubCyberLinesMaterial.uniforms.uBeatMap2.value = beatMap2;
               child.material = neonClubCyberLinesMaterial;
               // child.layers.toggle(BLOOM_SCENE)
             }
