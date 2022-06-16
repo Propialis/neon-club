@@ -29,6 +29,7 @@ import {
   neonClubEmissiveVertexShader,
 } from './shaders/neonEmissive.js';
 import { sphereFragment, sphereVertex } from './shaders/sphere.js';
+// import { cloudFragment, cloudVertex } from './shaders/clouds.js';
 
 const { useApp, useLoaders, useFrame, useCleanup, usePhysics, useInternals } =
   metaversefile;
@@ -48,10 +49,18 @@ let beatFactor2;
 let beatFactor3;
 let beatFactor4;
 let elapsedTime;
+
+//speaker asset
 let beatSpeakerHi
 let beatSpeakerBass
 let reactWoofer
 let reactMid
+
+// Egirl asset
+let eGirlText;
+let capitalText;
+let backPlate;
+let eGirlFrame;
 
 export default (e) => {
   const app = useApp();
@@ -150,16 +159,21 @@ export default (e) => {
             if (child.material.name === 'emasive') {
               child.material = neonClubEmissiveMaterial;
             }
-            // methods for preparing speakers and their locations 
-            if (child.name === 'Speaker_1'){
-              let speaker1 = new THREE.Object3D();
-              gltf.scene.scale.set(4,4,4);
-              //works with hardcoded values
-              gltf.scene.position.copy(params.speakerPos);
-              gltf.scene.quaternion.copy(params.speakerQuat);
-              speaker1 = gltf;
-              speakers.push(speaker1);
+            if (child.name === 'Backplate') {
+              console.log("test");
+              gltf.scene.position.copy(params.logoPos);
+              // gltf.scene.quaternion.copy(params.logoQuat);
             }
+            // // methods for preparing speakers and their locations 
+            // if (child.name === 'Speaker_1'){
+            //   let speaker1 = new THREE.Object3D();
+            //   gltf.scene.scale.set(4,4,4);
+            //   //works with hardcoded values
+            //   gltf.scene.position.copy(params.speakerPos);
+            //   gltf.scene.quaternion.copy(params.speakerQuat);
+            //   speaker1 = gltf;
+            //   speakers.push(speaker1);
+            // }
           }
         });
         const physicsId = physics.addGeometry(gltf.scene);
@@ -185,32 +199,69 @@ export default (e) => {
       app.add(model);
     });
   });
-  const speaker1Info = {
-    fileName: 'react-Speaker.glb',
+
+  const eGirlLogoInfo = {
+    fileName: 'egirl_logo.glb',
     filePath: baseUrl + 'models/',
-    speakerPos: new THREE.Vector3(45,5,43),
-    speakerQuat: new THREE.Vector4(0,1,0,0),
-  }
-  const vizSpeaker1 = loadModel(speaker1Info);
-  Promise.all([vizSpeaker1]).then((values) => {
+    logoPos: new THREE.Vector3(83,5,43),
+    logoQuat: new THREE.Vector4(0,1,0,0),
+  };
+  const eGirlLogo = loadModel(eGirlLogoInfo);
+
+  Promise.all([neonClub]).then((values) => {
     values.forEach((model) => {
-      console.log("loaded speaker");
-      app.add(model)
-      console.log(model);
-    })
-  })
-  const speakerInfo2 = {
-    fileName: 'react-Speaker.glb',
-    filePath: baseUrl + 'models/',
-    speakerPos: new THREE.Vector3(83,5,43),
-    speakerQuat: new THREE.Vector4(0,1,0,0),
-  }
-  const vizSpeaker2 = loadModel(speakerInfo2);
-  Promise.all([vizSpeaker2]).then((values) => {
-    values.forEach((model) => {
-      app.add(model)
-    })
-  })
+      console.log("loaded speaker", model);
+      app.add(model);
+    });
+  });
+
+
+
+  // const speaker1Info = {
+  //   fileName: 'react-Speaker.glb',
+  //   filePath: baseUrl + 'models/',
+  //   speakerPos: new THREE.Vector3(45,5,43),
+  //   speakerQuat: new THREE.Vector4(0,1,0,0),
+  // }
+  // const vizSpeaker1 = loadModel(speaker1Info);
+  // Promise.all([vizSpeaker1]).then((values) => {
+  //   values.forEach((model) => {
+  //     console.log("loaded speaker");
+  //     app.add(model)
+  //     console.log(model);
+  //   })
+  // })
+  // const speakerInfo2 = {
+  //   fileName: 'react-Speaker.glb',
+  //   filePath: baseUrl + 'models/',
+  //   speakerPos: new THREE.Vector3(83,5,43),
+  //   speakerQuat: new THREE.Vector4(0,1,0,0),
+  // }
+  // const vizSpeaker2 = loadModel(speakerInfo2);
+  // Promise.all([vizSpeaker2]).then((values) => {
+  //   values.forEach((model) => {
+  //     app.add(model)
+  //   })
+  // })
+  // //creating clouds/fog
+  // const clouds = new THREE.Mesh(
+  //   new THREE.SphereBufferGeometry(2.5,1000,1000),
+  //   new THREE.ShadowMaterial({
+  //     vertexShader: cloudVertex,
+  //     fragmentShader: cloudFragment,
+  //     vertexColors: true,
+  //     uniforms: {
+  //       uTime:{value:0},
+  //     }
+  //   })
+  // )
+  // clouds.position.set(0, 0, 0);
+  // clouds.rotation.set(0, 0, 0);
+  // clouds.updateMatrixWorld();
+
+  // app.add(clouds);
+  
+
 
   //creating audio-react sphere
   const sphere = new THREE.Mesh(
@@ -428,24 +479,23 @@ export default (e) => {
       reactWoofer = beatSpeakerBass;
       // console.log(reactMid);
     };
-    //console.log(speaker.scene.isMesh());
-    if (speakers){
-      speakers.forEach(speaker => {
-        speaker.scene.traverse(o => {
-          if (o.isMesh) {
-            o.morphTargetInfluences[0] = reactWoofer;
-            o.morphTargetInfluences[1] = reactMid;
-            // sphere.material.uniforms.uPulse2.value = reactMid;
-          }
-        })
-      });
-    }
+    // if (speakers){
+    //   speakers.forEach(speaker => {
+    //     speaker.scene.traverse(o => {
+    //       if (o.isMesh) {
+    //         o.morphTargetInfluences[0] = reactWoofer;
+    //         o.morphTargetInfluences[1] = reactMid;
+    //         // sphere.material.uniforms.uPulse2.value = reactMid;
+    //       }
+    //     })
+    //   });
+    // }
     if (reactWoofer){
       // if (reactWoofer === 1){
       //   sphere.material.uniforms.uBeat.value = 3;
       // }else{
       sphere.material.uniforms.uBeat.value = reactWoofer;
-      console.log(reactWoofer, sphere.material.uniforms.uPulse2.value);
+      // console.log(reactWoofer, sphere.material.uniforms.uPulse2.value);
       
     }
 
