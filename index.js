@@ -170,7 +170,7 @@ export default (e) => {
               let red = new THREE.Color(1,0,0);
               console.log(capitalText.material.color);
               capitalText.material.emissive.set(red);
-              console.log(capitalText.emissive.color);
+              console.log(capitalText.material.emissive);
               // gltf.scene.quaternion.copy(params.logoQuat);
             }
             // methods for preparing speakers and their locations 
