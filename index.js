@@ -129,8 +129,9 @@ export default (e) => {
             if (
               child.material.name === 'Wall' ||
               child.material.name === 'Wall.001' ||
-              child.material.name === 'Wall2' ||
-              child.material.name === "Material.012"
+              child.material.name === 'Wall2' 
+              // ||
+              // child.material.name === "Material.012"
             ) {
               const emissiveMap = new THREE.TextureLoader().load(
                 baseUrl + 'textures/wall_Emissive.png'
