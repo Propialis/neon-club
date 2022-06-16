@@ -520,9 +520,9 @@ export default (e) => {
       const white = new THREE.Color(1,1,1);
       const pink = new THREE.Color(1,0,1);
       if (reactWoofer === 1){
-        eGirlText.material.emmissive.set(white);
+        eGirlText.material.emissive.set(white);
       }else{
-        eGirlText.material.emmissive.set(pink);
+        eGirlText.material.emissive.set(pink);
       }
       
       egirlSign.scale.set((15,20,15));
