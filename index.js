@@ -162,7 +162,7 @@ export default (e) => {
             if (child.name === 'EGirl') {
               gltf.scene.scale.set(16,16,16);
               gltf.scene.position.copy(params.logoPos);
-              gltf.scene.rotation.set(0, 1.2,0);
+              gltf.scene.rotation.set(0, 1.5,0);
               // gltf.scene.quaternion.copy(params.logoQuat);
             }
             // methods for preparing speakers and their locations 
@@ -204,7 +204,7 @@ export default (e) => {
   const eGirlLogoInfo = {
     fileName: 'egirl_logo.glb',
     filePath: baseUrl + 'models/',
-    logoPos: new THREE.Vector3(-120, 45, 0),
+    logoPos: new THREE.Vector3(-119, 45, 0),
     logoQuat: new THREE.Vector4(0,1,0,0.4),
   };
   const eGirlLogo = loadModel(eGirlLogoInfo);
