@@ -527,7 +527,7 @@ export default (e) => {
 
       const white = new THREE.Color(1,1,1);
       const pink = new THREE.Color(1,0,1);
-      if (reactMid === 1){
+      if (reactWoofer === 1){
         eGirlText.material.emissive.set(white);
       }else{
         eGirlText.material.emissive.set(pink);
