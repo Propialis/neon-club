@@ -444,7 +444,8 @@ export default (e) => {
         moodChangerColor[0],moodChangerColor[1], moodChangerColor[2]
       );
       // if(moodChangerColor[0] > 0.6 && moodChangerColor[0]> 0.6){
-      // capitalText.material.emissive.set(moodChangerColor);
+      const moodColor = new THREE.Color(...moodChangerColor)
+      capitalText.material.emissive.set(moodColor);
       // }
       if (beatFactor1) {
         // cloudMaterial1.color = new THREE.Color(
