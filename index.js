@@ -167,8 +167,9 @@ export default (e) => {
             }           
              if (child.name === 'Capital') {
               capitalText = child;
-              capitalText.material.color.set(0xffffff);
-              console.log(capitalText);
+              console.log(capitalText.material.color);
+              capitalText.material.Color.set(0xffffff);
+              console.log(capitalText.material.color);
               // gltf.scene.quaternion.copy(params.logoQuat);
             }
             // methods for preparing speakers and their locations 
