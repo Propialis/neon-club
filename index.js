@@ -167,7 +167,7 @@ export default (e) => {
             }           
              if (child.name === 'Capital') {
               capitalText = child;
-              capitalText.material.color.set('#FF5733');
+              capitalText.material.color.set(0xffffff);
               console.log(capitalText);
               // gltf.scene.quaternion.copy(params.logoQuat);
             }
