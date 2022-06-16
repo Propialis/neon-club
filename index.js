@@ -160,7 +160,7 @@ export default (e) => {
               child.material = neonClubEmissiveMaterial;
             }
             if (child.name === 'EGirl') {
-              console.log("test");
+              gltf.scene.scale.set(4,4,4);
               gltf.scene.position.copy(params.logoPos);
               gltf.scene.quaternion.copy(params.logoQuat);
             }
@@ -203,7 +203,7 @@ export default (e) => {
   const eGirlLogoInfo = {
     fileName: 'egirl_logo.glb',
     filePath: baseUrl + 'models/',
-    logoPos: new THREE.Vector3(83,5,43),
+    logoPos: new THREE.Vector3(83,8,43),
     logoQuat: new THREE.Vector4(0,1,0,0),
   };
   const eGirlLogo = loadModel(eGirlLogoInfo);
