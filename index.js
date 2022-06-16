@@ -167,10 +167,10 @@ export default (e) => {
             }           
              if (child.name === 'Capital') {
               capitalText = child;
-              let red = new THREE.Color(1,0,0);
-              console.log(capitalText.material.color);
-              capitalText.material.emissive.set(red);
-              console.log(capitalText.material.emissive);
+              // let red = new THREE.Color(1,0,0);
+              // console.log(capitalText.material.color);
+              // capitalText.material.emissive.set(red);
+              // console.log(capitalText.material.emissive);
               // gltf.scene.quaternion.copy(params.logoQuat);
             }
             // methods for preparing speakers and their locations 
@@ -443,7 +443,9 @@ export default (e) => {
       sphere.material.uniforms.uMood.value = new THREE.Vector3(
         moodChangerColor[0],moodChangerColor[1], moodChangerColor[2]
       );
-      // capitalText.material.color = new THREE.Color(...moodChangerColor);
+      // if(moodChangerColor[0] > 0.6 && moodChangerColor[0]> 0.6){
+      capitalText.material.emissive.set(moodChangerColor);
+      // }
       if (beatFactor1) {
         // cloudMaterial1.color = new THREE.Color(
         //   (moodChangerColor[0] + beatFactor1 / 30) / 5,
