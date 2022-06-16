@@ -58,7 +58,6 @@ let reactMid
 
 // Egirl asset
 let eGirlText;
-let capitalText;
 let backPlate;
 let eGirlFrame;
 
@@ -67,6 +66,7 @@ export default (e) => {
   app.name = 'neon-club';
   let speakers = [];
   // console.log(useInternals())
+  let capitalText;
 
   // const rootScene = useInternals().rootScene
   // const camera = useInternals().camera
@@ -219,7 +219,7 @@ export default (e) => {
 
   Promise.all([eGirlLogo]).then((values) => {
     values.forEach((model) => {
-      console.log("loaded egirl", model);
+      console.log("loaded egirl", capitalText);
       app.add(model);
     });
   });
@@ -444,7 +444,7 @@ export default (e) => {
         moodChangerColor[0],moodChangerColor[1], moodChangerColor[2]
       );
       // if(moodChangerColor[0] > 0.6 && moodChangerColor[0]> 0.6){
-      capitalText.material.emissive.set(moodChangerColor);
+      // capitalText.material.emissive.set(moodChangerColor);
       // }
       if (beatFactor1) {
         // cloudMaterial1.color = new THREE.Color(
