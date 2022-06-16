@@ -167,7 +167,7 @@ export default (e) => {
               gltf.scene.scale.set(13.5,13.5,13.5);
               egirlSign = gltf.scene;
               gltf.scene.position.copy(params.logoPos);
-              gltf.scene.rotation.set(0, 1.57, 0);
+              gltf.scene.rotation.set(0, 0, 1.57);
               eGirlText = child;
               console.log(eGirlText);
               // gltf.scene.quaternion.copy(params.logoQuat);
